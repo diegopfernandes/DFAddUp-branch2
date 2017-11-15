@@ -19,12 +19,12 @@ class ViewController: UIViewController {
     var w: CGFloat! = 0.0
     
     //# MARK: - Instances
-    var quebecTaxesObj: QuebecTaxes!
+    var michiganTxObj: MichiganTaxe!
     
     //# MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.quebecTaxesObj = QuebecTaxes()
+        self.michiganTxObj = MichiganTaxe()
         self.labelNumberToDisplay.text = self.informationToDisplay(theSum: self.addUpArray())
         self.totalAmount = self.addUpArray()
         if self.plusButton.alpha == 0.2 {
@@ -130,7 +130,7 @@ class ViewController: UIViewController {
     
     //# MARK: - addingTotalWithTaxes
     private func addingTotalWithTaxes() {
-        let amountWithTaxes = self.quebecTaxesObj.getAmountWithTaxes(initialAmount: Float(self.numberToDisplay)!)
+        let amountWithTaxes = self.michiganTxObj.getAmountWithTaxes(initialAmount: Float(self.numberToDisplay)!)
         Singleton.sharedInstance.addToArray(theNumber: Float(amountWithTaxes)!)
         self.totalAmount = self.addUpArray()
         self.numberToDisplay = ""
